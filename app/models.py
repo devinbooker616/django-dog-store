@@ -6,3 +6,8 @@ class DogProduct(models.Model):
     dog_size = models.TextField()
     price = models.FloatField()
     quantity = models.IntegerField()
+
+class Purchase(models.Model):
+    dog_product = models.ForeignKey(DogProduct, on_delete=models.CASCADE)
+    purchased_at = models.DateTimeField()
+
