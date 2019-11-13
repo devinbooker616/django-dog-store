@@ -11,3 +11,8 @@ class Purchase(models.Model):
     dog_product = models.ForeignKey(DogProduct, on_delete=models.CASCADE)
     purchased_at = models.DateTimeField()
 
+class DogTag(models.Model):
+    owner_name = models.TextField()
+    dog_name = models.TextField()
+    dog_birthday = models.DateField()
+
