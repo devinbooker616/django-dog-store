@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from app.models import *
+from app.forms import *
 
 def home(request):
     pass
