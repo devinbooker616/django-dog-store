@@ -3,10 +3,12 @@ from app.models import *
 from app.forms import *
 
 def home(request):
-    pass
+    dog_products = DogProduct.objects.all()
+    return render(request, "home.html", {"dog_products": dog_products})
 
 def dog_product_detail(request, id):
-    pass
+    dog_product = DogProduct.objects.get(id=id)
+    return render(request, "home.html", {"dog_product": dog_product})
 
 def purchase_dog_product(request, id):
     pass
