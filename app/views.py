@@ -54,4 +54,4 @@ def new_dog_tag(request):
 
 def dog_tag_list(request):
     dog_tags = DogTag.objects.all()
-    return render("dog_tag_list.html", {"dog_tags": dog_tags})
+    return render(request, "dog_tag_list.html", {"dog_tags": dog_tags})
