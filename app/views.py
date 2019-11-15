@@ -45,7 +45,8 @@ def new_dog_tag(request):
             owner_name = form.cleaned_data["owner_name"]
             dog_name = form.cleaned_data["dog_name"]
             dog_birthday = form.cleaned_data["dog_birthday"]
-            dogtag = DogTag.objects.create(owner_name=owner_name, dog_name=dog_name, dog_birthday=dog_birthday)
+            dog_color = form.cleaned_data["dog_color"]
+            dogtag = DogTag.objects.create(owner_name=owner_name, dog_name=dog_name, dog_birthday=dog_birthday, dog_color=dog_color)
             return redirect("dog_tag_list")
         else:
             form = NewDogTagForm(request.GET)
